@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block title %}
+All Posts
+{% endblock %}
+
+{% block content %}
+    <h1>All Posts</h1>
+    <ul>
+        {% for post in posts %}
+        <li>
+            <a href="{% url 'update_post' post.id %}">{{ post.title }}</a> - {{ post.created_at }}
+        </li>
+        {% endfor %}
+    </ul>
+{% endblock %}
